@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Arm from './Arm';
 import Leg from './Leg';
 
-class Body extends Component {
+class Person extends Component {
 
 	constructor(props) {
     super(props);
@@ -10,12 +10,11 @@ class Body extends Component {
     	fingerNo: 1,
     	skin: 'yellow'
     };
+
   }
 
   componentDidMount() {
-  	setTimeout(() => {
-  		document.getElementById('body').style.background = '#f5f5f5';
-  	}, 1000);
+  	document.getElementById('person').style.background = '#f5f5f5';
   }
 
   changeSkin() {
@@ -34,9 +33,9 @@ class Body extends Component {
 
   render() {
     return (
-      <div id={'body'}>
-      	<h1>몸</h1>
-      	<p>피색은 {this.state.skin}</p>
+      <div id={'person'}>
+      	<h1>사람</h1>
+      	<p>피부색은 {this.state.skin}</p>
       	<Arm fingerNo={this.state.fingerNo} />
       	<Leg />
       	<button onClick={this.changeSkin.bind(this)}>피부색 바꾸기</button>
@@ -46,4 +45,4 @@ class Body extends Component {
   }
 }
 
-export default Body
+export default Person
